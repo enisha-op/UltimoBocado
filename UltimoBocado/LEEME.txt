@@ -1,0 +1,15 @@
+Proyecto: Mesa Viva - Avance de Proyecto Final 2
+
+Este proyecto contiene 7 páginas enlazadas entre sí y una hoja de estilos CSS.
+Se usó HTML y CSS, incluyendo Flexbox, Grid Layout, animaciones/transiciones y media queries.
+
+Páginas:
+- login.html
+- registrar.html
+- index.html
+- menu.html
+- form_pedido.html
+- pedidos.html
+- ofertas.html
+
+Nota: el proyecto es un prototipo académico. Los formularios no almacenan información, solo muestran la estructura visual solicitada.

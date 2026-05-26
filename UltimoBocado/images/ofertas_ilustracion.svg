@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430">
+  <rect width="900" height="430" rx="26" fill="#f7fbf4"/>
+  <rect x="95" y="90" width="300" height="205" rx="26" fill="#fff" stroke="#805d42" stroke-width="5"/>
+  <text x="136" y="165" font-family="Georgia" font-size="58" fill="#e26d5c">-40%</text>
+  <text x="136" y="218" font-family="Arial" font-size="28" fill="#315c46">últimas unidades</text>
+  <path d="M548 250 C583 150,695 150,730 250 C658 224,600 225,548 250" fill="#78a86b" stroke="#315c46" stroke-width="5"/>
+  <circle cx="635" cy="268" r="55" fill="#f1bd74"/>
+</svg>

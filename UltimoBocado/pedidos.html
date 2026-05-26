@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesa Viva - Pedidos realizados</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="pedidos-page">
+
+<header class="site-header">
+    <div class="brand">
+        <a href="index.html"><img class="logo" src="images/logo_mesa_viva.svg" alt="Logo Mesa Viva"></a>
+        <div class="brand-text">
+            <h1>Mesa Viva</h1>
+            <p>rescatamos comida, compartimos ahorro</p>
+        </div>
+    </div>
+    <nav class="navbar">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menú</a>
+        <a href="form_pedido.html">Pedido</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="login.html">Ingresar</a>
+    </nav>
+</header>
+<main>
+
+    <section class="page-grid">
+        <div class="card">
+            <span class="badge">Pedidos realizados</span>
+            <h2 class="hero-title">Tabla de seguimiento</h2>
+            <p class="subtitle">La tabla muestra pedidos simulados para representar cómo se vería el control básico del sitio.</p>
+        </div>
+        <img class="page-img" src="images/pedidos_ilustracion.svg" alt="Ilustración de tabla de pedidos">
+    </section>
+    <section class="page-grid simple">
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Número de pedido</th><th>Cliente</th><th>Productos seleccionados</th><th>Cantidad</th><th>Total</th><th>Estado</th></tr></thead>
+                <tbody>
+                    <tr><td>MV-001</td><td>Lucía Ramos</td><td>Ensalada de pollo</td><td>1</td><td>S/ 10.90</td><td><span class="status-pill">En proceso</span></td></tr>
+                    <tr><td>MV-002</td><td>Camila Torres</td><td>Pack de panes dulces</td><td>2</td><td>S/ 13.00</td><td><span class="status-pill">Preparando</span></td></tr>
+                    <tr><td>MV-003</td><td>Mariana Díaz</td><td>Chaufa vegetariano + combo</td><td>2</td><td>S/ 21.50</td><td><span class="status-pill">Enviado</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p><a class="btn" href="menu.html">Regresar al menú</a> <a class="btn secondary-btn" href="index.html">Ir al inicio</a></p>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <p><strong>Mesa Viva</strong><br>Proyecto académico de HTML y CSS.</p>
+        <p>Contacto: contacto@mesaviva.pe<br>Instagram: @mesaviva.pe | Facebook: Mesa Viva Perú</p>
+    </div>
+</footer>
+</body>
+</html>
