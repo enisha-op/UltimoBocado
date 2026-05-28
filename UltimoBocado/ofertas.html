@@ -3,66 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesa Viva - Ofertas especiales</title>
+    <title>Último Bocado - Ofertas Especiales</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo_ultimo_bocado.svg">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="ofertas-page">
 
 <header class="site-header">
     <div class="brand">
-        <a href="index.html"><img class="logo" src="images/logo_mesa_viva.svg" alt="Logo Mesa Viva"></a>
-        <div class="brand-text">
-            <h1>Mesa Viva</h1>
-            <p>rescatamos comida, compartimos ahorro</p>
-        </div>
+        <a href="index.html"><img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado"></a>
     </div>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">☰</label>
+
     <nav class="navbar">
         <a href="index.html">Inicio</a>
         <a href="menu.html">Menú</a>
-        <a href="form_pedido.html">Pedido</a>
-        <a href="pedidos.html">Pedidos</a>
-        <a href="ofertas.html">Ofertas</a>
+        <a href="ofertas.html" class="active">Ofertas</a>
+        <a href="pedidos.html">Mis Pedidos</a>
         <a href="login.html">Ingresar</a>
+        <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
     </nav>
 </header>
+
 <main>
 
     <section class="page-grid">
         <div class="card">
-            <span class="badge">Ofertas especiales</span>
             <h2 class="hero-title">Mayor descuento del día</h2>
-            <p class="subtitle">En esta página se resaltan los productos que tienen más urgencia de venta.</p>
-            <p>Usé indicadores como “Últimas unidades” para que el usuario reconozca rápido qué producto debe comprarse primero si quiere ayudar a reducir el desperdicio.</p>
+            <p class="subtitle">Salva estos platos antes de que sea demasiado tarde.</p>
+            <p>Estas son las opciones con mayor urgencia de rescate porque los locales están a punto de cerrar. ¡Aprovecha estos descuentos extremos y dale un respiro al planeta!</p>
         </div>
-        <img class="page-img" src="images/ofertas_ilustracion.svg" alt="Ilustración de ofertas especiales">
+        <div class="img-container">
+            <img class="hero-img" src="images/ofertas_ilustracion.png" alt="Ilustración de ofertas especiales">
+        </div>
     </section>
-    <section class="offers-grid">
-        <article class="offer-card">
-            <span class="urgency">Últimas 3 unidades</span>
-            <h3>Pack de panes dulces</h3>
-            <p>Descuento aproximado del 46%. Ideal para compra rápida antes del cierre.</p>
-            <p class="price-row"><span class="old-price">S/ 12.00</span><span class="new-price">S/ 6.50</span></p>
+
+    <h2 class="section-title text-orange">¡Rescata ya!</h2>
+
+    <section class="cards-grid mt-20">
+        
+        <article class="card border-orange">
+            <img class="food-img" src="images/panes.png" alt="Pack de panes dulces">
+            <span class="urgency mt-10">Últimas 3 unidades</span>
+            <h3 class="text-green mt-10">Pack de panes dulces</h3>
+            <p>Descuento extremo. Ideal para compra rápida antes del cierre del local.</p>
+            <div class="price-row">
+                <span class="old-price">S/ 12.00</span>
+                <span class="new-price text-orange">S/ 6.50</span>
+            </div>
+            <a class="btn btn-full text-center" href="form_pedido.html">Rescatar ahora</a>
         </article>
-        <article class="offer-card">
-            <span class="urgency">Recojo antes de 7:00 p. m.</span>
-            <h3>Ensalada de pollo</h3>
-            <p>Producto fresco que necesita rotación por el horario de atención.</p>
-            <p class="price-row"><span class="old-price">S/ 18.00</span><span class="new-price">S/ 10.90</span></p>
+        
+        <article class="card border-orange">
+            <img class="food-img" src="images/ensalada.png" alt="Ensalada de pollo">
+            <span class="urgency mt-10">Recojo antes de 7:00 p. m.</span>
+            <h3 class="text-green mt-10">Ensalada de pollo</h3>
+            <p>Producto fresco que necesita rotación urgente por el horario de atención.</p>
+            <div class="price-row">
+                <span class="old-price">S/ 18.00</span>
+                <span class="new-price text-orange">S/ 10.90</span>
+            </div>
+            <a class="btn btn-full text-center" href="form_pedido.html">Rescatar ahora</a>
         </article>
-        <article class="offer-card">
-            <span class="urgency">Solo por hoy</span>
-            <h3>Combo de sopa y guiso</h3>
-            <p>Oferta del almuerzo pensada para evitar sobrantes al terminar el día.</p>
-            <p class="price-row"><span class="old-price">S/ 20.00</span><span class="new-price">S/ 12.50</span></p>
+        
+        <article class="card border-orange">
+            <img class="food-img" src="images/sopa.png" alt="Combo de sopa y guiso">
+            <span class="urgency mt-10">Solo por hoy</span>
+            <h3 class="text-green mt-10">Combo de sopa y guiso</h3>
+            <p>Oferta contundente del almuerzo pensada para evitar sobrantes al terminar el día.</p>
+            <div class="price-row">
+                <span class="old-price">S/ 20.00</span>
+                <span class="new-price text-orange">S/ 12.50</span>
+            </div>
+            <a class="btn btn-full text-center" href="form_pedido.html">Rescatar ahora</a>
         </article>
+        
     </section>
 
 </main>
 
 <footer class="site-footer">
     <div class="footer-content">
-        <p><strong>Mesa Viva</strong><br>Proyecto académico de HTML y CSS.</p>
-        <p>Contacto: contacto@mesaviva.pe<br>Instagram: @mesaviva.pe | Facebook: Mesa Viva Perú</p>
+        <p><strong>Último Bocado &copy; 2026</strong></p>
+        <p>Contacto: contacto@ultimobocado.pe<br>Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú</p>
     </div>
 </footer>
 </body>

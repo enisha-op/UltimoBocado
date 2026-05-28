@@ -3,51 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesa Viva - Registro</title>
+    <title>Último Bocado - Registro</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo_ultimo_bocado.svg">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="registro-page">
 
 <header class="site-header">
     <div class="brand">
-        <a href="index.html"><img class="logo" src="images/logo_mesa_viva.svg" alt="Logo Mesa Viva"></a>
-        <div class="brand-text">
-            <h1>Mesa Viva</h1>
-            <p>rescatamos comida, compartimos ahorro</p>
-        </div>
+        <a href="index.html"><img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado"></a>
     </div>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">☰</label>
+
     <nav class="navbar">
         <a href="index.html">Inicio</a>
         <a href="menu.html">Menú</a>
-        <a href="form_pedido.html">Pedido</a>
-        <a href="pedidos.html">Pedidos</a>
         <a href="ofertas.html">Ofertas</a>
-        <a href="login.html">Ingresar</a>
+        <a href="pedidos.html">Mis Pedidos</a>
+        <a href="login.html" class="active">Ingresar</a>
+        <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
     </nav>
 </header>
+
 <main>
 
     <section class="page-grid">
-        <div class="form-card registro-card">
-            <span class="badge">Nuevo usuario</span>
-            <h2 class="hero-title">Registrar usuario</h2>
-            <p class="subtitle">El registro permite simular el alta de una persona interesada en comprar ofertas o publicar alimentos.</p>
-            <form>
+        <div class="form-card registro-card card">
+            <h2 class="hero-title">Crea tu cuenta</h2>
+            <p class="subtitle">Únete a la comunidad y empieza a rescatar comida deliciosa a precios increíbles.</p>
+            
+            <form action="#" method="POST">
                 <div class="form-row">
-                    <div class="form-group"><label for="nombre">Nombre completo</label><input type="text" id="nombre" name="nombre" placeholder="Nombre y apellidos"></div>
-                    <div class="form-group"><label for="correo">Correo electrónico</label><input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com"></div>
+                    <div class="form-group flex-1">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombres y apellidos" required>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
+                    </div>
                 </div>
+                
                 <div class="form-row">
-                    <div class="form-group"><label for="contrasena">Contraseña</label><input type="password" id="contrasena" name="contrasena"></div>
-                    <div class="form-group"><label for="confirmar">Confirmar contraseña</label><input type="password" id="confirmar" name="confirmar"></div>
+                    <div class="form-group flex-1">
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" id="contrasena" name="contrasena" placeholder="Crea una contraseña" required>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label for="confirmar">Confirmar contraseña</label>
+                        <input type="password" id="confirmar" name="confirmar" placeholder="Repite la contraseña" required>
+                    </div>
                 </div>
-                <button type="button">Registrar</button>
+                
+                <button type="submit" class="btn btn-full">Registrarme ahora</button>
             </form>
-            <p>Si ya tienes cuenta, puedes ir a <a href="login.html">Iniciar sesión</a>.</p>
+            
+            <div class="form-footer">
+                <p>¿Ya tienes cuenta? <a href="login.html" class="text-orange link-bold">Iniciar sesión aquí</a></p>
+            </div>
         </div>
-        <div>
-            <img class="page-img" src="images/registro_ilustracion.svg" alt="Ilustración de registro">
-            <div class="student-note"><p>Decidí separar los campos en dos filas para que el formulario no se vea tan largo en computadora, pero en celular baja a una sola columna.</p></div>
+        
+        <div class="img-container">
+            <img class="hero-img" src="images/registro_ilustracion.svg" alt="Ilustración de registro de usuario">
         </div>
     </section>
 
@@ -55,8 +74,8 @@
 
 <footer class="site-footer">
     <div class="footer-content">
-        <p><strong>Mesa Viva</strong><br>Proyecto académico de HTML y CSS.</p>
-        <p>Contacto: contacto@mesaviva.pe<br>Instagram: @mesaviva.pe | Facebook: Mesa Viva Perú</p>
+        <p><strong>Último Bocado &copy; 2026</strong></p>
+        <p>Contacto: contacto@ultimobocado.pe<br>Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú</p>
     </div>
 </footer>
 </body>

@@ -3,58 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesa Viva - Pedidos realizados</title>
+    <title>Último Bocado - Mis Pedidos</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo_ultimo_bocado.svg">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="pedidos-page">
 
 <header class="site-header">
     <div class="brand">
-        <a href="index.html"><img class="logo" src="images/logo_mesa_viva.svg" alt="Logo Mesa Viva"></a>
-        <div class="brand-text">
-            <h1>Mesa Viva</h1>
-            <p>rescatamos comida, compartimos ahorro</p>
-        </div>
+        <a href="index.html">
+            <img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado">
+        </a>
     </div>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">☰</label>
+
     <nav class="navbar">
         <a href="index.html">Inicio</a>
         <a href="menu.html">Menú</a>
-        <a href="form_pedido.html">Pedido</a>
-        <a href="pedidos.html">Pedidos</a>
         <a href="ofertas.html">Ofertas</a>
+        <a href="pedidos.html" class="active">Mis Pedidos</a>
         <a href="login.html">Ingresar</a>
+        <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
     </nav>
 </header>
+
 <main>
 
     <section class="page-grid">
         <div class="card">
-            <span class="badge">Pedidos realizados</span>
-            <h2 class="hero-title">Tabla de seguimiento</h2>
-            <p class="subtitle">La tabla muestra pedidos simulados para representar cómo se vería el control básico del sitio.</p>
+            <h2 class="hero-title">Historial de Rescates</h2>
+            <p class="subtitle">Aquí puedes hacer seguimiento al estado de tus pedidos recientes y ver cuánto has ahorrado en total.</p>
         </div>
-        <img class="page-img" src="images/pedidos_ilustracion.svg" alt="Ilustración de tabla de pedidos">
+        <div class="img-container">
+            <img class="hero-img" src="images/pedidos_ilustracion.png" alt="Ilustración de tabla de pedidos">
+        </div>
     </section>
-    <section class="page-grid simple">
+
+    <section class="mt-40">
         <div class="table-wrap">
             <table>
-                <thead><tr><th>Número de pedido</th><th>Cliente</th><th>Productos seleccionados</th><th>Cantidad</th><th>Total</th><th>Estado</th></tr></thead>
+                <thead>
+                    <tr>
+                        <th>N° de pedido</th>
+                        <th>Local Aliado</th>
+                        <th>Productos seleccionados</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
                 <tbody>
-                    <tr><td>MV-001</td><td>Lucía Ramos</td><td>Ensalada de pollo</td><td>1</td><td>S/ 10.90</td><td><span class="status-pill">En proceso</span></td></tr>
-                    <tr><td>MV-002</td><td>Camila Torres</td><td>Pack de panes dulces</td><td>2</td><td>S/ 13.00</td><td><span class="status-pill">Preparando</span></td></tr>
-                    <tr><td>MV-003</td><td>Mariana Díaz</td><td>Chaufa vegetariano + combo</td><td>2</td><td>S/ 21.50</td><td><span class="status-pill">Enviado</span></td></tr>
+                    <tr>
+                        <td>UB-001</td>
+                        <td>Cafetería Aurora</td>
+                        <td>Ensalada de pollo</td>
+                        <td>1</td>
+                        <td>S/ 10.90</td>
+                        <td><span class="status-pill status-pending">En proceso</span></td>
+                    </tr>
+                    <tr>
+                        <td>UB-002</td>
+                        <td>Panadería Sol</td>
+                        <td>Pack de panes dulces</td>
+                        <td>2</td>
+                        <td>S/ 13.00</td>
+                        <td><span class="status-pill status-ready">Listo para recojo</span></td>
+                    </tr>
+                    <tr>
+                        <td>UB-003</td>
+                        <td>Menú Casero Lili</td>
+                        <td>Chaufa vegetariano</td>
+                        <td>1</td>
+                        <td>S/ 9.00</td>
+                        <td><span class="status-pill status-done">Recogido</span></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
-        <p><a class="btn" href="menu.html">Regresar al menú</a> <a class="btn secondary-btn" href="index.html">Ir al inicio</a></p>
+        
+        <div class="mt-20">
+            <a class="btn" href="menu.html">Regresar al menú</a>
+            <a class="btn secondary-btn" href="index.html">Ir al inicio</a>
+        </div>
     </section>
 
 </main>
 
 <footer class="site-footer">
     <div class="footer-content">
-        <p><strong>Mesa Viva</strong><br>Proyecto académico de HTML y CSS.</p>
-        <p>Contacto: contacto@mesaviva.pe<br>Instagram: @mesaviva.pe | Facebook: Mesa Viva Perú</p>
+        <p><strong>Último Bocado &copy; 2026</strong></p>
+        <p>Contacto: contacto@ultimobocado.pe<br>Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú</p>
     </div>
 </footer>
 </body>

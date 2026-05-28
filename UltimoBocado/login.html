@@ -3,51 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesa Viva - Iniciar sesión</title>
+    <title>Último Bocado - Iniciar sesión</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo_ultimo_bocado.svg">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="login-page">
 
 <header class="site-header">
     <div class="brand">
-        <a href="index.html"><img class="logo" src="images/logo_mesa_viva.svg" alt="Logo Mesa Viva"></a>
-        <div class="brand-text">
-            <h1>Mesa Viva</h1>
-            <p>rescatamos comida, compartimos ahorro</p>
-        </div>
+        <a href="index.html"><img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado"></a>
+        
     </div>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">☰</label>
+
     <nav class="navbar">
         <a href="index.html">Inicio</a>
         <a href="menu.html">Menú</a>
-        <a href="form_pedido.html">Pedido</a>
-        <a href="pedidos.html">Pedidos</a>
         <a href="ofertas.html">Ofertas</a>
-        <a href="login.html">Ingresar</a>
+        <a href="pedidos.html">Mis Pedidos</a>
+        <a href="login.html" class="active">Ingresar</a>
+        <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
     </nav>
 </header>
+
 <main>
 
-    <section class="page-grid">
-        <div class="form-card login-card">
-            <span class="badge">Acceso del usuario</span>
+    <section id="login-section" class="page-grid">
+        <div class="form-card login-card card">
             <h2 class="hero-title">Iniciar sesión</h2>
-            <p class="subtitle">Formulario simulado para que un cliente o negocio pueda ingresar al sitio.</p>
-            <form>
+            <p class="subtitle">Ingresa a tu cuenta para empezar a rescatar.</p>
+            
+            <form action="#" method="POST">
                 <div class="form-group">
-                    <label for="usuario">Usuario</label>
-                    <input type="text" id="usuario" name="usuario" placeholder="Ejemplo: ana.mesa">
+                    <label for="usuario">Usuario o Correo Electrónico</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="Ejemplo: ana@correo.com" required>
                 </div>
+                
                 <div class="form-group">
                     <label for="clave">Contraseña</label>
-                    <input type="password" id="clave" name="clave" placeholder="Ingrese su contraseña">
+                    <input type="password" id="clave" name="clave" placeholder="Ingrese su contraseña" required>
                 </div>
-                <button type="button">Ingresar</button>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="recordar" name="recordar">
+                    <label for="recordar">Recordar mi sesión</label>
+                </div>
+
+                <button type="submit" class="btn btn-full">Ingresar a Último Bocado</button>
             </form>
-            <p>¿Aún no tienes cuenta? <a href="registrar.html">Registrar usuario</a></p>
+
+            <div class="form-footer">
+                <p>¿Aún no tienes cuenta? <a href="registrar.html" class="text-orange link-bold">Crear cuenta nueva</a></p>
+                <p class="small-text"><a href="#" class="link-gray">¿Olvidaste tu contraseña?</a></p>
+            </div>
         </div>
-        <div>
-            <img class="page-img" src="images/login_ilustracion.svg" alt="Ilustración de acceso de usuario">
-            <div class="student-note alt"><p>En esta parte solo se muestra la estructura visual. No guarda datos porque el avance se concentra en HTML y CSS.</p></div>
+        
+        <div class="img-container">
+            <img class="hero-img" src="images/login_ilustracion.png" alt="Ilustración de acceso de usuario">
         </div>
     </section>
 
@@ -55,8 +69,8 @@
 
 <footer class="site-footer">
     <div class="footer-content">
-        <p><strong>Mesa Viva</strong><br>Proyecto académico de HTML y CSS.</p>
-        <p>Contacto: contacto@mesaviva.pe<br>Instagram: @mesaviva.pe | Facebook: Mesa Viva Perú</p>
+        <p><strong>Último Bocado &copy; 2026</strong></p>
+        <p>Contacto: contacto@ultimobocado.pe<br>Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú</p>
     </div>
 </footer>
 </body>

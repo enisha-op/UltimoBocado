@@ -3,58 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesa Viva - Pedido</title>
+    <title>Último Bocado - Mi Carrito</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo_ultimo_bocado.svg">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="pedido-page">
 
 <header class="site-header">
     <div class="brand">
-        <a href="index.html"><img class="logo" src="images/logo_mesa_viva.svg" alt="Logo Mesa Viva"></a>
-        <div class="brand-text">
-            <h1>Mesa Viva</h1>
-            <p>rescatamos comida, compartimos ahorro</p>
-        </div>
+        <a href="index.html"><img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado"></a>
     </div>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">☰</label>
+
     <nav class="navbar">
         <a href="index.html">Inicio</a>
         <a href="menu.html">Menú</a>
-        <a href="form_pedido.html">Pedido</a>
-        <a href="pedidos.html">Pedidos</a>
         <a href="ofertas.html">Ofertas</a>
+        <a href="pedidos.html">Mis Pedidos</a>
         <a href="login.html">Ingresar</a>
+        <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
     </nav>
 </header>
+
 <main>
 
     <section class="page-grid">
-        <div class="form-card pedido-form">
-            <span class="badge">Formulario de pedido</span>
-            <h2 class="hero-title">Completar pedido</h2>
-            <p class="subtitle">Este formulario permite simular la reserva de alimentos rescatados.</p>
-            <form>
+        <div class="form-card card">
+            <h2 class="hero-title">Finalizar Reserva</h2>
+            <p class="subtitle">Selecciona los platos que deseas rescatar y prepárate para recogerlos en el local.</p>
+            
+            <form action="#" method="POST">
                 <div class="form-row">
-                    <div class="form-group"><label for="cliente">Nombre del cliente</label><input type="text" id="cliente" name="cliente" placeholder="Ejemplo: Lucía Ramos"></div>
-                    <div class="form-group"><label for="telefono">Teléfono</label><input type="tel" id="telefono" name="telefono" placeholder="999 999 999"></div>
-                </div>
-                <div class="form-group"><label for="direccion">Dirección</label><input type="text" id="direccion" name="direccion" placeholder="Calle, número y referencia"></div>
-                <div class="form-group">
-                    <label>Selección de platos</label>
-                    <div class="checkbox-list">
-                        <label class="checkbox-item"><input type="checkbox" name="plato"> Ensalada de pollo</label>
-                        <label class="checkbox-item"><input type="checkbox" name="plato"> Pack de panes dulces</label>
-                        <label class="checkbox-item"><input type="checkbox" name="plato"> Chaufa vegetariano</label>
-                        <label class="checkbox-item"><input type="checkbox" name="plato"> Combo sopa y guiso</label>
+                    <div class="form-group flex-1">
+                        <label for="cliente">Nombre completo</label>
+                        <input type="text" id="cliente" name="cliente" placeholder="Ejemplo: Lucía Ramos" required>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label for="telefono">Teléfono de contacto</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="999 999 999" required>
                     </div>
                 </div>
-                <div class="form-group"><label for="cantidad">Cantidad</label><select id="cantidad" name="cantidad"><option>1 unidad</option><option>2 unidades</option><option>3 unidades</option><option>4 unidades</option></select></div>
-                <button type="button">Enviar pedido</button>
+                
+                <div class="form-group">
+                    <label for="notas">Notas para el local (Opcional)</label>
+                    <input type="text" id="notas" name="notas" placeholder="Ejemplo: Llegaré 10 minutos antes del cierre">
+                </div>
+                
+                <div class="form-group">
+                    <label>Selección de platos a rescatar</label>
+                    <div class="checkbox-list">
+                        <div class="checkbox-group mt-10">
+                            <input type="checkbox" id="plato1" name="plato" value="Ensalada de pollo">
+                            <label for="plato1">Ensalada de pollo (Cafetería Aurora)</label>
+                        </div>
+                        <div class="checkbox-group mt-10">
+                            <input type="checkbox" id="plato2" name="plato" value="Pack de panes">
+                            <label for="plato2">Pack de panes dulces (Panadería Sol)</label>
+                        </div>
+                        <div class="checkbox-group mt-10">
+                            <input type="checkbox" id="plato3" name="plato" value="Chaufa">
+                            <label for="plato3">Chaufa vegetariano (Menú Casero Lili)</label>
+                        </div>
+                        <div class="checkbox-group mt-10">
+                            <input type="checkbox" id="plato4" name="plato" value="Combo sopa">
+                            <label for="plato4">Combo sopa y guiso (Sazón Norteña)</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cantidad">Cantidad total de packs</label>
+                    <select id="cantidad" name="cantidad" required>
+                        <option value="1">1 unidad</option>
+                        <option value="2">2 unidades</option>
+                        <option value="3">3 unidades</option>
+                        <option value="4">4 unidades</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-full">Confirmar Reserva</button>
             </form>
-            <p><a href="menu.html">Regresar al menú</a> | <a href="index.html">Ir al inicio</a></p>
+            
+            <div class="form-footer">
+                <p><a href="menu.html" class="text-orange link-bold">Seguir viendo el menú</a></p>
+            </div>
         </div>
-        <div>
-            <img class="page-img" src="images/pedido_ilustracion.svg" alt="Ilustración de pedido">
-            <div class="student-note alt"><p>Agregué checkboxes porque permiten seleccionar más de un plato, que es algo útil cuando una familia quiere aprovechar varias ofertas.</p></div>
+        
+        <div class="img-container">
+            <img class="hero-img" src="images/pedido_ilustracion.png" alt="Ilustración de carrito de compras">
         </div>
     </section>
 
@@ -62,8 +100,8 @@
 
 <footer class="site-footer">
     <div class="footer-content">
-        <p><strong>Mesa Viva</strong><br>Proyecto académico de HTML y CSS.</p>
-        <p>Contacto: contacto@mesaviva.pe<br>Instagram: @mesaviva.pe | Facebook: Mesa Viva Perú</p>
+        <p><strong>Último Bocado &copy; 2026</strong></p>
+        <p>Contacto: contacto@ultimobocado.pe<br>Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú</p>
     </div>
 </footer>
 </body>
