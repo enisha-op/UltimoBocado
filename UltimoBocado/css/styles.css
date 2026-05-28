@@ -135,6 +135,7 @@ main {
     border-radius: 5px;
     font-weight: bold;
     margin-top: 15px;
+    transition: background-color 0.5s ease;
 }
 
 .btn:hover {
@@ -150,6 +151,20 @@ main {
 .secondary-btn {
     background-color: #315c46;
     margin-left: 10px;
+}
+
+
+.card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Se mueve un poco hacia arriba */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Aparece una sombra */
 }
 
 .cards-grid {
