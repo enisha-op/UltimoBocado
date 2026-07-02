@@ -4,74 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Último Bocado - Iniciar sesión</title>
-    <link rel="icon" type="image/svg+xml" href="images/logo_ultimo_bocado.svg">
+    <link rel="icon" type="image/png" href="images/logo_ultimo_bocado.png">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="login-page">
 
-<header class="site-header">
-    <div class="brand">
-        <a href="index.html"><img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado"></a>
-        
-    </div>
+    <header class="site-header">
+        <div class="brand">
+            <a href="index.html">
+                <img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado">
+            </a>
+        </div>
 
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="nav-toggle-label">☰</label>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">☰</label>
 
-    <nav class="navbar">
-        <a href="index.html">Inicio</a>
-        <a href="menu.html">Menú</a>
-        <a href="ofertas.html">Ofertas</a>
-        <a href="pedidos.html">Mis Pedidos</a>
-        <a href="login.html" class="active">Ingresar</a>
-        <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
-    </nav>
-</header>
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <a href="menu.html">Menú</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="pedidos.html">Mis Pedidos</a>
+            <a href="login.html" class="active">Ingresar</a>
+            <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
+        </nav>
+    </header>
 
-<main>
+    <main>
 
-    <section id="login-section" class="page-grid">
-        <div class="form-card login-card card">
-            <h2 class="hero-title">Iniciar sesión</h2>
-            <p class="subtitle">Ingresa a tu cuenta para empezar a rescatar.</p>
-            
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="usuario">Usuario o Correo Electrónico</label>
-                    <input type="text" id="usuario" name="usuario" placeholder="Ejemplo: ana@correo.com" required>
+        <section id="login-section" class="page-grid">
+            <div class="form-card login-card card">
+                <h2 class="hero-title">Iniciar sesión</h2>
+
+                <p class="subtitle">
+                    Ingresa a tu cuenta para empezar a rescatar.
+                </p>
+
+                <form id="formLogin" onsubmit="validarLogin(event)" novalidate>
+                    <div class="form-group">
+                        <label for="usuario">Usuario o correo electrónico</label>
+                        <input 
+                            type="text" 
+                            id="usuario" 
+                            name="usuario" 
+                            placeholder="Ejemplo: ana@correo.com"
+                            oninput="limpiarMensajeLogin()"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clave">Contraseña</label>
+                        <input 
+                            type="password" 
+                            id="clave" 
+                            name="clave" 
+                            placeholder="Ingrese su contraseña"
+                            oninput="limpiarMensajeLogin()"
+                        >
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="recordar" name="recordar">
+                        <label for="recordar">Recordar mi sesión</label>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="button" class="secondary-btn btn-full" onclick="mostrarOcultarClave()">
+                            Ver / ocultar contraseña
+                        </button>
+                    </div>
+
+                    <p id="mensajeLogin" class="subtitle"></p>
+                    <div id="mensajeExitoLogin" class="mensaje-exito-login">
+                    <div class="icono-exito">✓</div>
+                        <div>
+                            <h3>Ingreso exitoso</h3>
+                            <p>Bienvenido a Último Bocado. Estamos cargando tu inicio...</p>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-full">
+                        Ingresar a Último Bocado
+                    </button>
+                </form>
+
+                <div class="form-footer">
+                    <p>
+                        ¿Aún no tienes cuenta?
+                        <a href="registrar.html" class="text-orange link-bold">Crear cuenta nueva</a>
+                    </p>
+
+                    <p class="small-text">
+                        <a href="#" class="link-gray" onclick="recuperarClave(event)">¿Olvidaste tu contraseña?</a>
+                    </p>
                 </div>
-                
-                <div class="form-group">
-                    <label for="clave">Contraseña</label>
-                    <input type="password" id="clave" name="clave" placeholder="Ingrese su contraseña" required>
-                </div>
-                
-                <div class="form-group checkbox-group">
-                    <input type="checkbox" id="recordar" name="recordar">
-                    <label for="recordar">Recordar mi sesión</label>
-                </div>
-
-                <button type="submit" class="btn btn-full">Ingresar a Último Bocado</button>
-            </form>
-
-            <div class="form-footer">
-                <p>¿Aún no tienes cuenta? <a href="registrar.html" class="text-orange link-bold">Crear cuenta nueva</a></p>
-                <p class="small-text"><a href="#" class="link-gray">¿Olvidaste tu contraseña?</a></p>
             </div>
-        </div>
-        
-        <div class="img-container">
-            <img class="hero-img" src="images/login_ilustracion.png" alt="Ilustración de acceso de usuario">
-        </div>
-    </section>
 
-</main>
+            <div class="img-container">
+                <img class="hero-img" src="images/login_ilustracion.png" alt="Ilustración de acceso de usuario">
+            </div>
+        </section>
 
-<footer class="site-footer">
-    <div class="footer-content">
-        <p><strong>Último Bocado &copy; 2026</strong></p>
-        <p>Contacto: contacto@ultimobocado.pe<br>Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú</p>
-    </div>
-</footer>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p><strong>Último Bocado &copy; 2026</strong></p>
+            <p>
+                Contacto: contacto@ultimobocado.pe<br>
+                Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/login.js"></script>
 </body>
 </html>

@@ -4,107 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Último Bocado - Inicio</title>
-    <link rel="icon" type="image/svg+xml" href="images/logo_ultimo_bocado.png">
+    <link rel="icon" type="image/png" href="images/logo_ultimo_bocado.png">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="inicio-page">
 
-<header class="site-header">
-    <div class="brand">
-        <a href="index.html">
-            <img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado">
-        </a>
-    </div>
+    <header class="site-header">
+        <div class="brand">
+            <a href="index.html">
+                <img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado">
+            </a>
+        </div>
 
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="nav-toggle-label">☰</label>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">☰</label>
 
-    <nav class="navbar">
-        <a href="index.html" class="active">Inicio</a>
-        <a href="menu.html">Menú</a>
-        <a href="ofertas.html">Ofertas</a>
-        <a href="pedidos.html">Mis Pedidos</a>
-        <a href="login.html">Ingresar</a>
-        <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
-    </nav>
-</header>
+        <nav class="navbar">
+            <a href="index.html" class="active">Inicio</a>
+            <a href="menu.html">Menú</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="pedidos.html">Mis Pedidos</a>
+            <a href="login.html">Ingresar</a>
+            <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
+        </nav>
+    </header>
 
-<main>
+    <main>
 
-    <section id="presentacion" class="page-grid">
-        <div class="card">
-            <h2 class="hero-title">Bienvenida a Último Bocado</h2>
-            <p class="subtitle">Rescatamos comida en perfecto estado que los negocios necesitan vender antes del cierre del día.</p>
-            <p>Revisa el menú, identifica ofertas con urgencia y haz tu pedido. Así unes el ahorro para tu bolsillo con una acción responsable contra el desperdicio de alimentos en tu ciudad.</p>
-            <div class="button-row">
-                <a class="btn" href="menu.html">Ver menú</a>
-                <a class="btn secondary-btn" href="form_pedido.html">Hacer pedido</a>
+        <section id="presentacion" class="page-grid">
+            <div class="card">
+                <h2 class="hero-title" id="saludoInicio">Bienvenida a Último Bocado</h2>
+
+                <p class="subtitle">
+                    Rescatamos comida en perfecto estado que los negocios necesitan vender antes del cierre del día.
+                </p>
+
+                <p>
+                    Revisa el menú, identifica ofertas con urgencia y haz tu pedido. Así unes el ahorro para tu bolsillo 
+                    con una acción responsable contra el desperdicio de alimentos en tu ciudad.
+                </p>
+
+                <p id="mensajeDia" class="subtitle"></p>
+
+                <div class="button-row">
+                    <a class="btn" href="menu.html">Ver menú</a>
+                    <a class="btn secondary-btn" href="form_pedido.html">Hacer pedido</a>
+                </div>
             </div>
+
+            <div class="img-container">
+                <img class="hero-img" src="images/hero_rescate.png" alt="Ilustración de rescate de alimentos">
+            </div>
+        </section>
+
+        <section id="impacto-simulado">
+            <h2 class="hero-title section-title">Nuestro Impacto</h2>
+
+            <p id="fraseImpacto" class="subtitle text-center">
+                Cada pedido ayuda a reducir el desperdicio de alimentos.
+            </p>
+
+            <div class="cards-grid">
+                <article class="card text-center">
+                    <h3 class="stat-number text-orange">120+</h3>
+                    <p>Platos rescatados</p>
+                </article>
+
+                <article class="card text-center">
+                    <h3 class="stat-number text-orange">S/ 1,500</h3>
+                    <p>Ahorro de usuarios</p>
+                </article>
+
+                <article class="card text-center">
+                    <h3 class="stat-number text-orange">50 kg</h3>
+                    <p>CO2 evitado al planeta</p>
+                </article>
+            </div>
+
+            <div class="button-row text-center">
+                <button class="btn" onclick="mostrarFraseImpacto()">Ver mensaje de impacto</button>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <h2 class="hero-title section-title">¿Dudas sobre el rescate?</h2>
+
+            <details class="faq-item">
+                <summary>¿La comida está en mal estado?</summary>
+                <p>
+                    ¡Para nada! Es comida fresca del día que los locales no lograron vender. 
+                    Al rescatarla, comes rico, pagas menos y ayudas al planeta.
+                </p>
+            </details>
+
+            <details class="faq-item">
+                <summary>¿Cómo y a qué hora recojo mi pedido?</summary>
+                <p>
+                    Al hacer tu reserva en la página, te indicaremos el horario de recojo. 
+                    Suele ser entre 30 a 60 minutos antes de que el local cierre.
+                </p>
+            </details>
+
+            <details class="faq-item">
+                <summary>¿Tienen servicio de delivery?</summary>
+                <p>
+                    Por ahora, el modelo de Último Bocado es solo para recojo en tienda. 
+                    Esto nos ayuda a mantener los precios súper bajos para ti.
+                </p>
+            </details>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p><strong>Último Bocado &copy; 2026</strong></p>
+            <p>
+                Contacto: contacto@ultimobocado.pe<br>
+                Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú
+            </p>
         </div>
-        <div class="img-container">
-            <img class="hero-img" src="images/hero_rescate.png" alt="Ilustración de rescate de alimentos">
-        </div>
-    </section>
+    </footer>
 
-    <section id="como-funciona" class="cards-grid">
-        <article class="card text-center">
-            <h3 class="text-green">1. Elige</h3>
-            <p>Busca un local cercano con excedentes del día.</p>
-        </article>
-        <article class="card text-center border-orange">
-            <h3 class="text-green">2. Reserva</h3>
-            <p>Compra tu pack sorpresa a un precio muy bajo.</p>
-        </article>
-        <article class="card text-center">
-            <h3 class="text-green">3. Rescata</h3>
-            <p>Recógelo en el horario indicado y disfruta.</p>
-        </article>
-    </section>
-
-    <section id="impacto-simulado">
-        <h2 class="hero-title section-title">Nuestro Impacto</h2>
-        <div class="cards-grid">
-            <article class="card text-center">
-                <h3 class="stat-number text-orange">120+</h3>
-                <p>Platos rescatados</p>
-            </article>
-            <article class="card text-center">
-                <h3 class="stat-number text-orange">S/ 1,500</h3>
-                <p>Ahorro de usuarios</p>
-            </article>
-            <article class="card text-center">
-                <h3 class="stat-number text-orange">50 kg</h3>
-                <p>CO2 evitado al planeta</p>
-            </article>
-        </div>
-    </section>
-
-    <section id="faq" class="faq-section">
-        <h2 class="hero-title section-title">¿Dudas sobre el rescate?</h2>
-        
-        <details class="faq-item">
-            <summary>¿La comida está en mal estado?</summary>
-            <p>¡Para nada! Es comida fresca del día que los locales no lograron vender. Al rescatarla, comes rico, pagas menos y ayudas al planeta.</p>
-        </details>
-
-        <details class="faq-item">
-            <summary>¿Cómo y a qué hora recojo mi pedido?</summary>
-            <p>Al hacer tu reserva en la página, te indicaremos el horario de recojo. Suele ser entre 30 a 60 minutos antes de que el local cierre.</p>
-        </details>
-        
-        <details class="faq-item">
-            <summary>¿Tienen servicio de delivery?</summary>
-            <p>Por ahora, el modelo de Último Bocado es solo para recojo en tienda. Esto nos ayuda a mantener los precios súper bajos para ti.</p>
-        </details>
-    </section>
-
-</main>
-
-<footer class="site-footer">
-    <div class="footer-content">
-        <p><strong>Último Bocado &copy; 2026</strong></p>
-        <p>Contacto: contacto@ultimobocado.pe<br>Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú</p>
-    </div>
-</footer>
+    <script src="js/index.js"></script>
 </body>
 </html>

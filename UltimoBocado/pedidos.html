@@ -4,98 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Último Bocado - Mis Pedidos</title>
-    <link rel="icon" type="image/svg+xml" href="images/logo_ultimo_bocado.svg">
+    <link rel="icon" type="image/png" href="images/logo_ultimo_bocado.png">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="pedidos-page">
 
-<header class="site-header">
-    <div class="brand">
-        <a href="index.html">
-            <img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado">
-        </a>
-    </div>
-
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="nav-toggle-label">☰</label>
-
-    <nav class="navbar">
-        <a href="index.html">Inicio</a>
-        <a href="menu.html">Menú</a>
-        <a href="ofertas.html">Ofertas</a>
-        <a href="pedidos.html" class="active">Mis Pedidos</a>
-        <a href="login.html">Ingresar</a>
-        <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
-    </nav>
-</header>
-
-<main>
-
-    <section class="page-grid">
-        <div class="card">
-            <h2 class="hero-title">Historial de Rescates</h2>
-            <p class="subtitle">Aquí puedes hacer seguimiento al estado de tus pedidos recientes y ver cuánto has ahorrado en total.</p>
+    <header class="site-header">
+        <div class="brand">
+            <a href="index.html">
+                <img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado">
+            </a>
         </div>
-        <div class="img-container">
-            <img class="hero-img" src="images/pedidos_ilustracion.png" alt="Ilustración de tabla de pedidos">
-        </div>
-    </section>
 
-    <section class="mt-40">
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>N° de pedido</th>
-                        <th>Local Aliado</th>
-                        <th>Productos seleccionados</th>
-                        <th>Cantidad</th>
-                        <th>Total</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>UB-001</td>
-                        <td>Cafetería Aurora</td>
-                        <td>Ensalada de pollo</td>
-                        <td>1</td>
-                        <td>S/ 10.90</td>
-                        <td><span class="status-pill status-pending">En proceso</span></td>
-                    </tr>
-                    <tr>
-                        <td>UB-002</td>
-                        <td>Panadería Sol</td>
-                        <td>Pack de panes dulces</td>
-                        <td>2</td>
-                        <td>S/ 13.00</td>
-                        <td><span class="status-pill status-ready">Listo para recojo</span></td>
-                    </tr>
-                    <tr>
-                        <td>UB-003</td>
-                        <td>Menú Casero Lili</td>
-                        <td>Chaufa vegetariano</td>
-                        <td>1</td>
-                        <td>S/ 9.00</td>
-                        <td><span class="status-pill status-done">Recogido</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="mt-20">
-            <a class="btn" href="menu.html">Regresar al menú</a>
-            <a class="btn secondary-btn" href="index.html">Ir al inicio</a>
-        </div>
-    </section>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">☰</label>
 
-</main>
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <a href="menu.html">Menú</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="pedidos.html" class="active">Mis Pedidos</a>
+            <a href="login.html">Ingresar</a>
+            <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
+        </nav>
+    </header>
 
-<footer class="site-footer">
-    <div class="footer-content">
-        <p><strong>Último Bocado &copy; 2026</strong></p>
-        <p>Contacto: contacto@ultimobocado.pe<br>Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú</p>
-    </div>
-</footer>
+    <main>
+
+        <section class="page-grid">
+            <div class="card">
+                <h2 class="hero-title">Historial de Rescates</h2>
+
+                <p class="subtitle">
+                    Aquí puedes revisar las reservas que realizaste y hacer seguimiento a tus pedidos recientes.
+                </p>
+
+                <p id="resumenPedidos">
+                    Aún no se ha cargado información de pedidos.
+                </p>
+            </div>
+
+            <div class="img-container">
+                <img class="hero-img" src="images/pedidos_ilustracion.png" alt="Ilustración de tabla de pedidos">
+            </div>
+        </section>
+
+        <section class="card mt-20">
+            <div class="form-row">
+                <div class="form-group flex-1">
+                    <label for="filtroEstado">Filtrar por estado</label>
+                    <select id="filtroEstado" onchange="filtrarPedidos()">
+                        <option value="todos">Todos los pedidos</option>
+                        <option value="En proceso">En proceso</option>
+                        <option value="Listo para recojo">Listo para recojo</option>
+                        <option value="Recogido">Recogido</option>
+                    </select>
+                </div>
+
+                <div class="form-group flex-1">
+                    <label>Acciones</label>
+                    <button class="btn secondary-btn btn-full" onclick="limpiarHistorial()">
+                        Limpiar historial
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-40">
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>N° de pedido</th>
+                            <th>Cliente</th>
+                            <th>Productos seleccionados</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaPedidos">
+                        <!-- Los pedidos se mostrarán con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="mensajePedidos" class="subtitle"></p>
+
+            <div class="mt-20">
+                <a class="btn" href="menu.html">Regresar al menú</a>
+                <a class="btn secondary-btn" href="index.html">Ir al inicio</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p><strong>Último Bocado &copy; 2026</strong></p>
+            <p>
+                Contacto: contacto@ultimobocado.pe<br>
+                Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/pedidos.js"></script>
 </body>
 </html>

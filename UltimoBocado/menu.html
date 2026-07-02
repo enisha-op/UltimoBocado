@@ -4,102 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Último Bocado - Menú</title>
-    <link rel="icon" type="image/svg+xml" href="images/logo_ultimo_bocado.svg">
+    <link rel="icon" type="image/png" href="images/logo_ultimo_bocado.png">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="menu-page">
 
-<header class="site-header">
-    <div class="brand">
-        <a href="index.html"><img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado"></a>
-    </div>
-
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="nav-toggle-label">☰</label>
-
-    <nav class="navbar">
-        <a href="index.html">Inicio</a>
-        <a href="menu.html" class="active">Menú</a>
-        <a href="ofertas.html">Ofertas</a>
-        <a href="pedidos.html">Mis Pedidos</a>
-        <a href="login.html">Ingresar</a>
-        <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
-    </nav>
-</header>
-
-<main>
-
-    <section class="page-grid">
-        <div class="card">
-            <h2 class="hero-title">Opciones Disponibles</h2>
-            <p>Descubre los platos y packs que esperan ser rescatados hoy. Recuerda que las porciones son limitadas y cambian todos los días dependiendo de los excedentes de cada local aliado.</p>
+    <header class="site-header">
+        <div class="brand">
+            <a href="index.html">
+                <img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado">
+            </a>
         </div>
-        <div class="img-container">
-            <img class="hero-img" src="images/menu_ilustracion.png" alt="Ilustración del menú de comida">
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">☰</label>
+
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <a href="menu.html" class="active">Menú</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="pedidos.html">Mis Pedidos</a>
+            <a href="login.html">Ingresar</a>
+            <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-grid">
+            <div class="card">
+                <h2 class="hero-title">Opciones disponibles</h2>
+
+                <p>
+                    Descubre los platos y packs que esperan ser rescatados hoy. Recuerda que las porciones son limitadas 
+                    y cambian todos los días dependiendo de los excedentes de cada local aliado.
+                </p>
+
+                <p id="mensajeMenu" class="subtitle">
+                    Hoy tenemos opciones listas para reservar.
+                </p>
+            </div>
+
+            <div class="img-container">
+                <img class="hero-img" src="images/menu_ilustracion.png" alt="Ilustración del menú de comida">
+            </div>
+        </section>
+
+        <h2 class="section-title text-green">Platos para rescatar hoy</h2>
+
+        <section class="card mt-20">
+            <div class="form-row">
+                <div class="form-group flex-1">
+                    <label for="filtroLocal">Filtrar por local</label>
+                    <select id="filtroLocal" onchange="filtrarMenu()">
+                        <option value="todos">Todos los locales</option>
+                        <option value="Cafetería Aurora">Cafetería Aurora</option>
+                        <option value="Panadería Sol">Panadería Sol</option>
+                        <option value="Menú Casero Lili">Menú Casero Lili</option>
+                        <option value="Sazón Norteña">Sazón Norteña</option>
+                    </select>
+                </div>
+
+                <div class="form-group flex-1">
+                    <label for="filtroPrecio">Filtrar por precio</label>
+                    <select id="filtroPrecio" onchange="filtrarMenu()">
+                        <option value="todos">Todos los precios</option>
+                        <option value="menor10">Menores a S/ 10.00</option>
+                        <option value="mayor10">Desde S/ 10.00</option>
+                    </select>
+                </div>
+            </div>
+
+            <p id="contadorMenu" class="subtitle"></p>
+        </section>
+
+        <section id="listaComidas" class="page-grid mt-20">
+            <!-- Aquí se mostrarán los platos con JavaScript -->
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p><strong>Último Bocado &copy; 2026</strong></p>
+            <p>
+                Contacto: contacto@ultimobocado.pe<br>
+                Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú
+            </p>
         </div>
-    </section>
+    </footer>
 
-    <h2 class="section-title text-green">Platos para rescatar hoy</h2>
-
-    <section class="page-grid mt-20">
-        
-        <article class="card">
-            <img class="food-img" src="images/ensalada.png" alt="Ensalada de pollo">
-            <span class="small-tag mt-10">Cafetería Aurora</span>
-            <h3 class="text-green mt-10">Ensalada de pollo</h3>
-            <p>Porción fresca preparada en la mañana, disponible hasta las 7:00 p. m.</p>
-            <div class="price-row">
-                <span class="old-price">S/ 18.00</span>
-                <span class="new-price text-orange">S/ 10.90</span>
-            </div>
-            <a class="btn btn-full text-center" href="form_pedido.html">Añadir al pedido</a>
-        </article>
-
-        <article class="card">
-            <img class="food-img" src="images/panes.png" alt="Pack de panes dulces">
-            <span class="small-tag mt-10">Panadería Sol</span>
-            <h3 class="text-green mt-10">Pack de panes dulces</h3>
-            <p>Unidad mixta de panes del día, ideal para compartir en casa con café.</p>
-            <div class="price-row">
-                <span class="old-price">S/ 12.00</span>
-                <span class="new-price text-orange">S/ 6.50</span>
-            </div>
-            <a class="btn btn-full text-center" href="form_pedido.html">Añadir al pedido</a>
-        </article>
-
-        <article class="card">
-            <img class="food-img" src="images/chaufa.png" alt="Arroz chaufa vegetariano">
-            <span class="small-tag mt-10">Menú Casero Lili</span>
-            <h3 class="text-green mt-10">Arroz chaufa vegetariano</h3>
-            <p>Plato preparado con verduras y huevo, recomendado para recojo rápido.</p>
-            <div class="price-row">
-                <span class="old-price">S/ 16.00</span>
-                <span class="new-price text-orange">S/ 9.00</span>
-            </div>
-            <a class="btn btn-full text-center" href="form_pedido.html">Añadir al pedido</a>
-        </article>
-
-        <article class="card">
-            <img class="food-img" src="images/sopa.png" alt="Combo de sopa y guiso">
-            <span class="small-tag mt-10">Sazón Norteña</span>
-            <h3 class="text-green mt-10">Combo de sopa y guiso</h3>
-            <p>Combo contundente del almuerzo con gran descuento por cierre de atención.</p>
-            <div class="price-row">
-                <span class="old-price">S/ 20.00</span>
-                <span class="new-price text-orange">S/ 12.50</span>
-            </div>
-            <a class="btn btn-full text-center" href="form_pedido.html">Añadir al pedido</a>
-        </article>
-
-    </section>
-
-</main>
-
-<footer class="site-footer">
-    <div class="footer-content">
-        <p><strong>Último Bocado &copy; 2026</strong></p>
-        <p>Contacto: contacto@ultimobocado.pe<br>Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú</p>
-    </div>
-</footer>
+    <script src="js/menu.js"></script>
 </body>
 </html>

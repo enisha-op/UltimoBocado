@@ -4,79 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Último Bocado - Registro</title>
-    <link rel="icon" type="image/svg+xml" href="images/logo_ultimo_bocado.svg">
+    <link rel="icon" type="image/png" href="images/logo_ultimo_bocado.png">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="registro-page">
 
-<header class="site-header">
-    <div class="brand">
-        <a href="index.html"><img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado"></a>
-    </div>
+    <header class="site-header">
+        <div class="brand">
+            <a href="index.html">
+                <img class="logo" src="images/logo_ultimo_bocado.png" alt="Logo Último Bocado">
+            </a>
+        </div>
 
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="nav-toggle-label">☰</label>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">☰</label>
 
-    <nav class="navbar">
-        <a href="index.html">Inicio</a>
-        <a href="menu.html">Menú</a>
-        <a href="ofertas.html">Ofertas</a>
-        <a href="pedidos.html">Mis Pedidos</a>
-        <a href="login.html" class="active">Ingresar</a>
-        <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
-    </nav>
-</header>
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <a href="menu.html">Menú</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="pedidos.html">Mis Pedidos</a>
+            <a href="login.html" class="active">Ingresar</a>
+            <a href="form_pedido.html" class="nav-btn-carrito">🛒 Mi Carrito</a>
+        </nav>
+    </header>
 
-<main>
+    <main>
 
-    <section class="page-grid">
-        <div class="form-card registro-card card">
-            <h2 class="hero-title">Crea tu cuenta</h2>
-            <p class="subtitle">Únete a la comunidad y empieza a rescatar comida deliciosa a precios increíbles.</p>
-            
-            <form action="#" method="POST">
-                <div class="form-row">
-                    <div class="form-group flex-1">
-                        <label for="nombre">Nombre completo</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Nombres y apellidos" required>
+        <section class="page-grid">
+            <div class="form-card registro-card card">
+                <h2 class="hero-title">Crea tu cuenta</h2>
+
+                <p class="subtitle">
+                    Únete a la comunidad y empieza a rescatar comida deliciosa a precios increíbles.
+                </p>
+
+                <form id="formRegistro" novalidate>
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="nombre">Nombre completo</label>
+                            <input 
+                                type="text" 
+                                id="nombre" 
+                                name="nombre" 
+                                placeholder="Nombres y apellidos"
+                                oninput="limpiarMensajeRegistro()"
+                            >
+                        </div>
+
+                        <div class="form-group flex-1">
+                            <label for="correo">Correo electrónico</label>
+                            <input 
+                                type="email" 
+                                id="correo" 
+                                name="correo" 
+                                placeholder="correo@ejemplo.com"
+                                oninput="limpiarMensajeRegistro()"
+                            >
+                        </div>
                     </div>
-                    <div class="form-group flex-1">
-                        <label for="correo">Correo electrónico</label>
-                        <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
+
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="contrasena">Contraseña</label>
+                            <input 
+                                type="password" 
+                                id="contrasena" 
+                                name="contrasena" 
+                                placeholder="Crea una contraseña"
+                                oninput="revisarSeguridadClave()"
+                            >
+                        </div>
+
+                        <div class="form-group flex-1">
+                            <label for="confirmar">Confirmar contraseña</label>
+                            <input 
+                                type="password" 
+                                id="confirmar" 
+                                name="confirmar" 
+                                placeholder="Repite la contraseña"
+                                oninput="limpiarMensajeRegistro()"
+                            >
+                        </div>
                     </div>
+
+                    <p id="seguridadClave" class="small-text"></p>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terminos" name="terminos" onchange="limpiarMensajeRegistro()">
+                        <label for="terminos">Acepto recibir información sobre ofertas y rescates disponibles.</label>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="button" class="secondary-btn btn-full" onclick="mostrarOcultarContrasenas()">
+                            Ver / ocultar contraseñas
+                        </button>
+                    </div>
+
+                    <p id="mensajeRegistro" class="subtitle"></p>
+
+                    <div id="mensajeExitoRegistro" class="mensaje-exito-registro">
+                        <div class="icono-exito">✓</div>
+                        <div>
+                            <h3>Registro exitoso</h3>
+                            <p>Tu cuenta fue creada correctamente. Puedes iniciar sesión cuando desees.</p>
+                            <a href="login.html" class="btn btn-mensaje">Ir a iniciar sesión</a>
+                        </div>
+                    </div>
+
+                    <button type="button" id="btnRegistrar" class="btn btn-full" onclick="registrarUsuario()">
+                        Registrarme ahora
+                    </button>
+
+                </form>
+
+                <div class="form-footer">
+                    <p>
+                        ¿Ya tienes cuenta?
+                        <a href="login.html" class="text-orange link-bold">Iniciar sesión aquí</a>
+                    </p>
                 </div>
-                
-                <div class="form-row">
-                    <div class="form-group flex-1">
-                        <label for="contrasena">Contraseña</label>
-                        <input type="password" id="contrasena" name="contrasena" placeholder="Crea una contraseña" required>
-                    </div>
-                    <div class="form-group flex-1">
-                        <label for="confirmar">Confirmar contraseña</label>
-                        <input type="password" id="confirmar" name="confirmar" placeholder="Repite la contraseña" required>
-                    </div>
-                </div>
-                
-                <button type="submit" class="btn btn-full">Registrarme ahora</button>
-            </form>
-            
-            <div class="form-footer">
-                <p>¿Ya tienes cuenta? <a href="login.html" class="text-orange link-bold">Iniciar sesión aquí</a></p>
             </div>
-        </div>
-        
-        <div class="img-container">
-            <img class="hero-img" src="images/registro_ilustracion.svg" alt="Ilustración de registro de usuario">
-        </div>
-    </section>
 
-</main>
+            <div class="img-container">
+                <img class="hero-img" src="images/registro_ilustracion.svg" alt="Ilustración de registro de usuario">
+            </div>
+        </section>
 
-<footer class="site-footer">
-    <div class="footer-content">
-        <p><strong>Último Bocado &copy; 2026</strong></p>
-        <p>Contacto: contacto@ultimobocado.pe<br>Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú</p>
-    </div>
-</footer>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p><strong>Último Bocado &copy; 2026</strong></p>
+            <p>
+                Contacto: contacto@ultimobocado.pe<br>
+                Instagram: @ultimobocado.pe | Facebook: Último Bocado Perú
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/registrar.js"></script>
 </body>
 </html>
